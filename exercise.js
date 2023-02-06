@@ -32,25 +32,25 @@
 //    - Select BOTH paragraphs by drilling into the document and "navigating" to the
 //      mentioned elements
 
-const firstPharaghElement = document.body.children[2].children[1];
+const paragraphs = document.querySelectorAll('section p');
+const removeBtn = document.querySelector('#remove-btn');
+const colorBtn = document.querySelector('#color-btn');
 
 function changeBckgClr() {
-  firstPharaghElement.style.backgroundColor = "blue";
+  paragraphs[0].style.backgroundColor = 'blue';
 }
 
-firstPharaghElement.addEventListener("click", changeBckgClr);
+colorBtn.addEventListener('click', changeBckgClr);
 
 //    - If you struggle with DOM drilling, use "ids" instead but watch the solution!
 // 4) Change the functions from (2) such that:
 //    - The first button removes the third paragraph (i.e. the <p> prior to it)
 
-const thirdPharagraphElement = document.body.children[2].children[3];
-
 function delFirstPar() {
-  thirdPharagraphElement.remove();
+  paragraphs[2].remove();
 }
 
-thirdPharagraphElement.addEventListener("click", delFirstPar);
+removeBtn.addEventListener('click', delFirstPar);
 
 //    - The second button changes the background color of the first paragraph to blue
 
